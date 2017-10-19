@@ -39,10 +39,13 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       <div>
         <Wrapper>
           <Option>
-            About
+            Me
           </Option>
           <Option>
             CV
+          </Option>
+          <Option>
+            Competencies
           </Option>
           <Option>
             Contact

@@ -6,11 +6,18 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Image = styled.img`
+width: inherit;
+height: inherit;
+
+`;
 
 
 function Img(props) {
   return (
-    <img className={props.className} src={props.src} alt={props.alt} />
+    <Image className={props.className} src={props.src} alt={props.alt} />
   );
 }
 
