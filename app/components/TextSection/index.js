@@ -15,22 +15,20 @@ color: #95989A;
 const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
-padding-top: 20px;
 color: #95989A;
 align-items: center;
-height: 60vh;
 
 `;
 
 const Text = styled.div`
-width: 30vw;
+width: 60%;
 text-align: center;
 margin-top: 1em;
 `;
 
 const Line = styled.hr`
     //border-bottom: 2px  #95989A;
-    width: 40vw;
+    width: 80%;
     border-color: #e5e5e5;
     border-left: 0px;
     border-right: 0px;

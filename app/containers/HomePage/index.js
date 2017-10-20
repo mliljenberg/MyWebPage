@@ -11,10 +11,13 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import bigpic from '../../images/bigpic.jpg';
+import bigpic from '../../images/MePic.jpg';
 import Image from '../../components/Image';
 import Header from '../../components/Header';
 import TextSection from '../../components/TextSection';
+import CvPart from '../../components/CvPart';
+import Competencies from '../../components/Competencies';
+import * as info from './TextConst';
 
 const ImageWrapper = styled.div`
 width:100%;
@@ -24,21 +27,56 @@ margin:0;
 scroll:disabled;
 `;
 
+const MeWrapper = styled.div`
+height: 55vh;
+padding-top: 20px;
+width: 60vw;
+`;
+const Wrapper = styled.div`
+align-items: center;
+display: flex;
+flex-direction: column;
+`;
+const CvWrapper = styled.div`
+width: 70vw;
+color: #95989A;
+display: flex;
+flex-direction: column;
+align-items: center;
+`;
+const Line = styled.hr`
+    //border-bottom: 2px  #95989A;
+    width: 80%;
+    border-color: #e5e5e5;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    margin-top: 4em;
+`;
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
         <Header />
-        <ImageWrapper>
-          <Image src={bigpic} alt="Bild här" />
-        </ImageWrapper>
-        <TextSection header="Me" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-        <TextSection header="Me" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-        <TextSection header="Me" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-        <TextSection header="Me" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-
-
+        <Wrapper>
+          <ImageWrapper>
+            <Image src={bigpic} alt="Bild här" />
+          </ImageWrapper>
+          <MeWrapper>
+            <TextSection header={info.ME.header} text={info.ME.text} />
+          </MeWrapper>
+          <CvWrapper>
+            <h2>Experience</h2>
+            {info.CV_LIST.map((x) =>
+              <CvPart key={x.header} src={x.src} orient={x.orient} header={x.header} text={x.text} />
+          )}
+            <Line />
+          </CvWrapper>
+          <Competencies
+            list={info.COMP_LIST}
+          />
+        </Wrapper>
       </div>
     );
   }
