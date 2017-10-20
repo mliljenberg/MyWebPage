@@ -18,6 +18,8 @@ import TextSection from '../../components/TextSection';
 import CvPart from '../../components/CvPart';
 import Competencies from '../../components/Competencies';
 import * as info from './TextConst';
+import Contact from '../../components/Contact';
+import Footer from '../../components/Footer';
 
 const ImageWrapper = styled.div`
 width:100%;
@@ -27,10 +29,12 @@ margin:0;
 scroll:disabled;
 `;
 
-const MeWrapper = styled.div`
-height: 55vh;
+const StandardWrapper = styled.div`
 padding-top: 20px;
 width: 60vw;
+align-items: center;
+display: flex;
+flex-direction: column;
 `;
 const Wrapper = styled.div`
 align-items: center;
@@ -43,6 +47,7 @@ color: #95989A;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-top: 2em;
 `;
 const Line = styled.hr`
     //border-bottom: 2px  #95989A;
@@ -63,9 +68,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
           <ImageWrapper>
             <Image src={bigpic} alt="Bild här" />
           </ImageWrapper>
-          <MeWrapper>
+          <StandardWrapper>
             <TextSection header={info.ME.header} text={info.ME.text} />
-          </MeWrapper>
+          </StandardWrapper>
           <CvWrapper>
             <h2>Experience</h2>
             {info.CV_LIST.map((x) =>
@@ -73,10 +78,17 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
           )}
             <Line />
           </CvWrapper>
-          <Competencies
-            list={info.COMP_LIST}
-          />
+          <StandardWrapper>
+            <Competencies
+              list={info.COMP_LIST}
+            />
+            <Line />
+          </StandardWrapper>
+          <StandardWrapper>
+            <Contact />
+          </StandardWrapper>
         </Wrapper>
+        <Footer />
       </div>
     );
   }

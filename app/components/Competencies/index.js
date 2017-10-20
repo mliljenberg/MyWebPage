@@ -13,12 +13,13 @@ import Image from '../Image';
 
 // TODO:hur skickar man in/kommer åt props på denna? //background-color: ${this.props.selected ? 'black' : '#006600'};
 const ImageWrapper = styled.div`
-
+opacity: ${(props) => props.selected ? '0.7' : '1'};
 width: 100px;
 height: 100px;
 margin:20px;
+background-color:black;
 :hover{
-background-color: black;
+opacity: 0.7;
 }
 `;
 
@@ -34,10 +35,10 @@ align-items: center;
 
 `;
 const TextWrapper = styled.div`
-background-color: #880000;
 display: flex;
 flex-direction: column;
 align-items: center;
+transition:height 1s ease ;
 
 `;
 
@@ -45,8 +46,8 @@ class Competencies extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 'test2',
-      text: 'här kommer det vara lite mer text sedan eller nja inte här...',
+      selected: '',
+      text: '',
       expand: false,
     };
     this.imageClicked = this.imageClicked.bind(this);
@@ -64,7 +65,7 @@ class Competencies extends React.PureComponent {
 
   render() {
     const list = this.props.list.map((obj) =>
-      (<ImageWrapper key={obj.header} onClick={this.imageClicked} value={obj} selected={this.state.selected === obj.header}>
+      (<ImageWrapper key={obj.header} onClick={() => this.imageClicked(obj)} value={obj} selected={this.state.selected === obj.header}>
         <Image src={obj.src} alt="Pic here" />
       </ImageWrapper>)
     );
