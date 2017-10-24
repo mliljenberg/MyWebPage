@@ -22,32 +22,32 @@ import Contact from '../../components/Contact';
 import Footer from '../../components/Footer';
 
 const ImageWrapper = styled.div`
-width:100%;
-height: 91vh;
-overflow: hidden;
-margin:0;
-scroll:disabled;
+    width:100%;
+    height: 91vh;
+    overflow: hidden;
+    margin:0;
+    scroll:disabled;
 `;
 
 const StandardWrapper = styled.div`
-padding-top: 20px;
-width: 60vw;
-align-items: center;
-display: flex;
-flex-direction: column;
+    padding-top: 20px;
+    width: 60vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 `;
 const Wrapper = styled.div`
-align-items: center;
-display: flex;
-flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 `;
 const CvWrapper = styled.div`
-width: 70vw;
-color: #95989A;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 2em;
+    width: 70vw;
+    color: #95989A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
 `;
 const Line = styled.hr`
     //border-bottom: 2px  #95989A;
