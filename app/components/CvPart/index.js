@@ -27,7 +27,7 @@ const Header = styled.h3`
 color: #95989A;
 `;
 const Text = styled.div`
-text-align: center;
+text-align: left;
 margin: 0;
 `;
 
@@ -49,7 +49,7 @@ function CvPart(props) {
         </ImageWrapper>
         <TextWrapper>
           <Header>{props.header}</Header>
-          <Text>{props.text}</Text>
+          <Text dangerouslySetInnerHTML={{ __html: props.text }}></Text>
         </TextWrapper>
       </Wrapper>
     );
@@ -58,7 +58,7 @@ function CvPart(props) {
     <Wrapper>
       <TextWrapper>
         <Header>{props.header}</Header>
-        <Text>{props.text}</Text>
+        <Text dangerouslySetInnerHTML={{ __html: props.text }}></Text>
       </TextWrapper>
       <ImageWrapper>
         <Image src={props.src} alt="Pic here" />

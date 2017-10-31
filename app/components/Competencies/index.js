@@ -9,6 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+
 import Image from '../Image';
 
 // TODO:hur skickar man in/kommer åt props på denna? //background-color: ${this.props.selected ? 'black' : '#006600'};
@@ -19,6 +20,7 @@ height: 100px;
 margin:20px;
 :hover{
 opacity: 0.7;
+cursor: pointer;
 }
 `;
 

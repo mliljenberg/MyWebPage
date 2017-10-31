@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -22,7 +23,7 @@ background: white;
 opacity: 0.9;
 
 `;
-const Option = styled.a`
+const Option = styled.div`
 margin: 0 20px 0 20px;
 height:25px;
 :hover {
@@ -57,7 +58,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
 }
 
 Header.propTypes = {
-
+  me: PropTypes.func.isRequired,
 };
 
 export default Header;

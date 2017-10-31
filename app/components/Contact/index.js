@@ -11,6 +11,8 @@ import Image from '../Image';
 import mail from '../../images/mail.png';
 import linkedin from '../../images/linkedin.png';
 import github from '../../images/github.png';
+import pdf from '../../images/cv_marcus_liljenberg.pdf';
+
 
 const ImageWrapper = styled.div`
 width: 75px;
@@ -20,6 +22,7 @@ padding: -2px;
 background-color:#2F8BFF;
 :hover{
 opacity: 0.5;
+cursor: pointer;
 }
 
 `;
@@ -33,6 +36,20 @@ align-items: center;
 const A = styled.a`
 width: inherit;
 height: inherit;
+`;
+
+const CV = styled.a`
+background-color: #8e24aa;
+color:white;
+border-bottom: none;
+text-decoration: none;
+padding: 0;
+margin:0;
+width: 75px;
+height: 75px;
+text-align: center;
+font-family: "Trebuchet MS";
+font-size: 50px;
 `;
 
 class Contact extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -61,6 +78,10 @@ class Contact extends React.PureComponent { // eslint-disable-line react/prefer-
             <Image src={github} alt="Pic here" />
           </A>
         </ImageWrapper>
+        <CV href={pdf} download="Marcus_Liljenberg_CV.pdf" >
+          CV
+        </CV>
+
       </Wrapper>
     );
   }

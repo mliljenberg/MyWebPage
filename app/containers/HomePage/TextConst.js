@@ -17,13 +17,13 @@ export const ME = {
 
 export const CV_LIST = [{
   header: 'Tetra Pak',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  text: '<p>The Technical Talent program is an extensive trainee program for ambitious engineering students with a genuine interest for technology and technical solutions. Being put in the midst of an engineering workplace parallel to my studies I have received invaluable insight and experience that I immediately can apply to my education. I have been working mainly with User experience and building web based systems. I worked with team members all over the world and also worked for about a month in Shangai with their development team</p>',
   src: tetrapak,
   orient: true,
 },
 {
   header: 'Adsensus',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  text: '<p>As a business to business consultant at Adsensus we are working for redefining sales. As a part of the business development at my client my assignments included:<br /><br />- Identifying and monitoring potential customers.<br />- Analyze and qualify critical business information.<br />- Analyze Nordic markets with the purpose of creating new business opportunities by contacting company decision makers.<br />- Finalize qualified sales meetings.<br />- Document and manage CRM systems for the client.<br /><br /></p>',
   src: adsensus,
   orient: false,
 },
@@ -41,7 +41,7 @@ export const CV_LIST = [{
 },
 {
   header: 'Datatekniksektionen, LTH',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  text: 'I was a part of the board of Directors at the Computer science-guild were i hold the position as head of corporate relations. This means that i am responsible for all contact with companies that wants to have a collaboration with the Computer science-guild. The committee i am head of consists of sixteen people who are working together to help companies market themselves towards computer engineering students, this is usually done by organizing events with the companies.<br /><br /> The year previous to becoming head of corporate relations i responsible for the Computer science-guild fair called &ldquo;Teknikfokus&rdquo;. I worked with a project group that consisted of six people. As project manager i did everything from selling fair to the companies to organising and ensuring that both the students and the companies were satisfied with &ldquo;Teknikfokus&rdquo;. Our work resulted in the most successful &ldquo;Teknikfokus&rdquo; fair so far both economically and in the number of students visiting the fair.',
   src: dsek,
   orient: true,
 },

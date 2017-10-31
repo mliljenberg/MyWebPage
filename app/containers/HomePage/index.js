@@ -11,7 +11,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import bigpic from '../../images/MePic.jpg';
+import bigpic from '../../images/bigpic.jpg';
 import Image from '../../components/Image';
 import Header from '../../components/Header';
 import TextSection from '../../components/TextSection';
@@ -22,11 +22,14 @@ import Contact from '../../components/Contact';
 import Footer from '../../components/Footer';
 
 const ImageWrapper = styled.div`
-    width:100%;
+    max-width:100%;
+    //width: 100vw;
     height: 91vh;
     overflow: hidden;
     margin:0;
     scroll:disabled;
+    align-self: center;
+    align-items: center;
 `;
 
 const StandardWrapper = styled.div`
@@ -36,6 +39,7 @@ const StandardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    color: #95989A;
 `;
 const Wrapper = styled.div`
     align-items: center;
@@ -82,12 +86,14 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
             <Line />
           </CvWrapper>
           <StandardWrapper>
+            <h2>Competencies</h2>
             <Competencies
               list={info.COMP_LIST}
             />
             <Line />
           </StandardWrapper>
           <StandardWrapper>
+            <h2>Contact</h2>
             <Contact />
           </StandardWrapper>
         </Wrapper>
