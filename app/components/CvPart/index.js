@@ -12,13 +12,13 @@ import Image from '../Image';
 const ImageWrapper = styled.div`
 width: 250px;
 height: 250px;
-background-color: #0074D9;
 align-self: center;
 `;
 const Wrapper = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+flex-wrap: wrap;
 color: #95989A;
 margin: 20px;
 padding: 20px;
@@ -34,6 +34,7 @@ margin: 0;
 const TextWrapper = styled.div`
 width: 50%;
 display: flex;
+flex-wrap: wrap;
 flex-direction: column;
 align-items: center;
 `;

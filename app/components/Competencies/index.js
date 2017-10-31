@@ -17,7 +17,6 @@ opacity: ${(props) => props.selected ? '0.7' : '1'};
 width: 100px;
 height: 100px;
 margin:20px;
-background-color:black;
 :hover{
 opacity: 0.7;
 }
@@ -27,11 +26,14 @@ const SkillWrapper = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+
 `;
 const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+flex-wrap: wrap;
+
 
 `;
 const TextWrapper = styled.div`
@@ -39,6 +41,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 transition:height 1s ease ;
+flex-wrap: wrap;
 
 `;
 
@@ -88,7 +91,10 @@ Competencies.propTypes = {
     header: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     proficency: PropTypes.string.isRequired,
-    src: PropTypes.object.isRequired,
+    src: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]).isRequired,
   })),
 };
 

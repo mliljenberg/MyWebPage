@@ -34,17 +34,20 @@ const StandardWrapper = styled.div`
     width: 60vw;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
 `;
 const Wrapper = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 `;
 const CvWrapper = styled.div`
     width: 70vw;
     color: #95989A;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     margin-top: 2em;

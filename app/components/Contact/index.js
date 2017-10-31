@@ -8,12 +8,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Image from '../Image';
+import mail from '../../images/mail.png';
+import linkedin from '../../images/linkedin.png';
+import github from '../../images/github.png';
 
 const ImageWrapper = styled.div`
-width: 100px;
-height: 100px;
+width: 75px;
+height: 75px;
 margin:20px;
-background-color: #333333;
+padding: -2px;
+background-color:#2F8BFF;
 :hover{
 opacity: 0.5;
 }
@@ -24,32 +28,38 @@ display: flex;
 flex-direction: row;
 align-items: center;
 
+
+`;
+const A = styled.a`
+width: inherit;
+height: inherit;
 `;
 
 class Contact extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   mailClicked() {
-    // TODO: Add open mail thingy
+    const email = 'mliljenberg@gmail.com';
+    const subject = 'From Your Website';
+    const emailBody = 'Hi';
+    document.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
+  }
 
-  }
-  linkedInClicked() {
-    // TODO: Redirect to my likedIn
-  }
-  gitHubClicked() {
-    // TODO: Redirect to my likedIn
-  }
 
   render() {
     return (
       <Wrapper>
         <ImageWrapper onClick={this.mailClicked} >
-          <Image src={''} alt="Pic here" />
+          <Image src={mail} alt="Pic here" />
         </ImageWrapper>
-        <ImageWrapper onClick={this.linkedInClicked} >
-          <Image src={''} alt="Pic here" />
+        <ImageWrapper >
+          <A href="https://www.linkedin.com/in/marcus-liljenberg-91852b8b/">
+            <Image src={linkedin} alt="Pic here" />
+          </A>
         </ImageWrapper>
-        <ImageWrapper onClick={this.gitHubClicked} >
-          <Image src={''} alt="Pic here" />
+        <ImageWrapper >
+          <A href="https://github.com/mliljenberg">
+            <Image src={github} alt="Pic here" />
+          </A>
         </ImageWrapper>
       </Wrapper>
     );
