@@ -11,8 +11,7 @@ import database from '../../images/database.png';
 
 export const ME = {
   header: 'Me',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-
+  text: 'Website is still a work in progress!',
 };
 
 export const CV_LIST = [{
@@ -29,13 +28,13 @@ export const CV_LIST = [{
 },
 {
   header: 'University of Illinois',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  text: 'University of Illinois is one of the top ten ranked Computer Science schools in the world. Studied Computer Science for a semester at UIUC, was... ',
   src: UIUC,
   orient: true,
 },
 {
   header: 'Lunds Tekniska Högskola',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  text: '<p>I am currently in my last year of my Master program in Usability and design at LTH </br> Previously worked as a laboratory leader in an undergraduate course in Java programming at Lund’s University. My work consisted of helping students analyse problems in their programs and helping them understand the code in the labs. I also examined and graded their work after each lab. <p/>',
   src: LU,
   orient: false,
 },

@@ -43,13 +43,16 @@ background-color: #8e24aa;
 color:white;
 border-bottom: none;
 text-decoration: none;
-padding: 0;
-margin:0;
+margin:20px;
 width: 75px;
 height: 75px;
 text-align: center;
 font-family: "Trebuchet MS";
 font-size: 50px;
+:hover{
+opacity: 0.5;
+cursor: pointer;
+}
 `;
 
 class Contact extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

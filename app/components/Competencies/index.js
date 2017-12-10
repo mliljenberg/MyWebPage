@@ -28,7 +28,6 @@ const SkillWrapper = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-
 `;
 const Wrapper = styled.div`
 display: flex;
@@ -42,7 +41,8 @@ const TextWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-transition:height 1s ease ;
+height: ${(props) => props.selected ? 'auto' : '0'};
+transition:flex 2s ease ;
 flex-wrap: wrap;
 
 `;
@@ -56,10 +56,15 @@ class Competencies extends React.PureComponent {
       expand: false,
     };
     this.imageClicked = this.imageClicked.bind(this);
+    this.getHeight = this.getHeight.bind(this);
   }
-
+  getHeight() {
+    if (this.state.selected !== '') {
+      return 'auto';
+    }
+    return '0';
+  }
   imageClicked(item) {
-    console.log(item);
     // TODO: set text increase width of text etc...
     if (this.state.selected !== item.header) {
       this.setState({ selected: item.header, text: item.text, expand: true });
@@ -67,8 +72,8 @@ class Competencies extends React.PureComponent {
       this.setState({ selected: '', text: '', expand: false });
     }
   }
-
   render() {
+    const style = { height: this.getHeight() };
     const list = this.props.list.map((obj) =>
       (<ImageWrapper key={obj.header} onClick={() => this.imageClicked(obj)} value={obj} selected={this.state.selected === obj.header}>
         <Image src={obj.src} alt="Pic here" />
@@ -79,7 +84,7 @@ class Competencies extends React.PureComponent {
         <SkillWrapper>
           {list}
         </SkillWrapper>
-        <TextWrapper>
+        <TextWrapper style={style}>
           <h3>{this.state.selected}</h3>
           <div>{this.state.text}</div>
         </TextWrapper>
