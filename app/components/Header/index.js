@@ -5,8 +5,9 @@
 */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import jump from 'jump.js';
 
 const Wrapper = styled.div`
 position: fixed;
@@ -23,7 +24,7 @@ background: white;
 opacity: 0.9;
 
 `;
-const Option = styled.div`
+const Option = styled.a`
 margin: 0 20px 0 20px;
 height:25px;
 :hover {
@@ -34,21 +35,35 @@ cursor: pointer;
 }
 `;
 
+
+const smoothScroll = (oldPos, newPos) => {
+  const pos = newPos - oldPos;
+  jump(pos);
+};
+
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.itemClicked = this.itemClicked.bind(this);
+  }
+  itemClicked(item) {
+    smoothScroll(window.pageYOffset, item.offsetTop - 100);
+  }
+
   render() {
     return (
       <div>
         <Wrapper>
-          <Option>
+          <Option onClick={() => { this.itemClicked(this.props.me); }}>
             Me
           </Option>
-          <Option>
-            CV
+          <Option onClick={() => { this.itemClicked(this.props.exp); }}>
+            Experience
           </Option>
-          <Option>
+          <Option onClick={() => { this.itemClicked(this.props.comp); }}>
             Competencies
           </Option>
-          <Option>
+          <Option onClick={() => { this.itemClicked(this.props.cont); }}>
             Contact
           </Option>
         </Wrapper>
@@ -58,7 +73,11 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
 }
 
 Header.propTypes = {
-  me: PropTypes.func.isRequired,
+  comp: PropTypes.object,
+  me: PropTypes.object,
+  exp: PropTypes.object,
+  cont: PropTypes.object,
+
 };
 
 export default Header;

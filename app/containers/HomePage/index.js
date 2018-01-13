@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-mount-set-state */
 /*
  * HomePage
  *
@@ -67,10 +68,26 @@ const Line = styled.hr`
 `;
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.state = {
+      comp: this.comp,
+      exp: this.exp,
+      me: this.me,
+      cont: this.cont,
+    };
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+  componentDidMount() {
+    this.setState({ comp: this.comp,
+      me: this.me,
+      cont: this.cont,
+      exp: this.exp });
+  }
   render() {
     return (
-      <div>
-        <Header />
+      <div ref={(input) => { this.me = input; }}>
+        <Header comp={this.state.comp} me={this.state.me} exp={this.state.exp} cont={this.state.cont} />
         <Wrapper>
           <ImageWrapper>
             <Image src={bigpic} alt="Bild här" />
@@ -79,21 +96,21 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
             <TextSection header={info.ME.header} text={info.ME.text} />
           </StandardWrapper>
           <CvWrapper>
-            <h2>Experience</h2>
+            <h2 ref={(input) => { this.exp = input; }}>Experience</h2>
             {info.CV_LIST.map((x) =>
               <CvPart key={x.header} src={x.src} orient={x.orient} header={x.header} text={x.text} />
           )}
             <Line />
           </CvWrapper>
           <StandardWrapper>
-            <h2>Competencies</h2>
+            <h2 ref={(input) => { this.comp = input; }}>Competencies</h2>
             <Competencies
               list={info.COMP_LIST}
             />
             <Line />
           </StandardWrapper>
           <StandardWrapper>
-            <h2>Contact</h2>
+            <h2 ref={(input) => { this.cont = input; }} >Contact</h2>
             <Contact />
           </StandardWrapper>
         </Wrapper>

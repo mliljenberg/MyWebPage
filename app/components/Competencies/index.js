@@ -47,12 +47,12 @@ flex-wrap: wrap;
 
 `;
 
-class Competencies extends React.PureComponent {
+class Competencies extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: '',
-      text: '',
+      selected: props.list[0].header,
+      text: props.list[0].text,
       expand: false,
     };
     this.imageClicked = this.imageClicked.bind(this);
@@ -80,7 +80,8 @@ class Competencies extends React.PureComponent {
       </ImageWrapper>)
     );
     return (
-      <Wrapper>
+      <Wrapper id="competencies">
+        <div></div>
         <SkillWrapper>
           {list}
         </SkillWrapper>

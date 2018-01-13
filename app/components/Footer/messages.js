@@ -5,9 +5,10 @@
  */
 import { defineMessages } from 'react-intl';
 
+
 export default defineMessages({
   header: {
     id: 'app.components.Footer.header',
-    defaultMessage: 'This is the Footer component !',
+    defaultMessage: '© Marcus Liljenberg, Made by Marcus Liljenberg using React-Boilerplate',
   },
 });
