@@ -11,7 +11,7 @@ import Image from '../Image';
 import mail from '../../images/mail.png';
 import linkedin from '../../images/linkedin.png';
 import github from '../../images/github.png';
-import pdf from '../../images/cv_marcus_liljenberg.pdf';
+import pdf from '../../images/Cv_Marcus_Liljenberg.pdf';
 
 
 const ImageWrapper = styled.div`
