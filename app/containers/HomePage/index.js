@@ -86,13 +86,14 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   }
   render() {
     return (
-      <div ref={(input) => { this.me = input; }}>
+      <div>
         <Header comp={this.state.comp} me={this.state.me} exp={this.state.exp} cont={this.state.cont} />
         <Wrapper>
           <ImageWrapper>
             <Image src={bigpic} alt="Bild här" />
           </ImageWrapper>
           <StandardWrapper>
+            <h1 ref={(input) => { this.me = input; }} />
             <TextSection header={info.ME.header} text={info.ME.text} />
           </StandardWrapper>
           <CvWrapper>

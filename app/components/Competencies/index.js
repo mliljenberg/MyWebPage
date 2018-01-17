@@ -46,6 +46,10 @@ transition:flex 2s ease ;
 flex-wrap: wrap;
 
 `;
+const Text = styled.div`
+text-align: left;
+margin: 0;
+`;
 
 class Competencies extends React.Component {
   constructor(props) {
@@ -87,7 +91,7 @@ class Competencies extends React.Component {
         </SkillWrapper>
         <TextWrapper style={style}>
           <h3>{this.state.selected}</h3>
-          <div>{this.state.text}</div>
+          <Text dangerouslySetInnerHTML={{ __html: this.state.text }}></Text>
         </TextWrapper>
       </Wrapper>
     );

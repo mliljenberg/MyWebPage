@@ -21,9 +21,10 @@ align-items: center;
 `;
 
 const Text = styled.div`
-width: 60%;
-text-align: center;
+width: 90%;
+text-align: left;
 margin-top: 1em;
+
 `;
 
 const Line = styled.hr`
