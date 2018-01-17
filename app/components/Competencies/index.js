@@ -13,11 +13,29 @@ import styled from 'styled-components';
 import Image from '../Image';
 
 // TODO:hur skickar man in/kommer åt props på denna? //background-color: ${this.props.selected ? 'black' : '#006600'};
+const BorderWrapper = styled.div`
+width: 100px;
+height: 120px;
+margin:20px;
+margin-left: 20px ;
+display: flex;
+flex-direction: row;
+align-items: center;
+border-bottom: ${(props) => props.selected ? 'solid' : 'none'};
+border-color: #2098D1;
+
+:hover{
+opacity: 0.7;
+border-bottom: solid;
+cursor: pointer;
+border-color: rgba(32,152,209,0.49);
+}
+`;
 const ImageWrapper = styled.div`
-opacity: ${(props) => props.selected ? '0.7' : '1'};
+opacity: ${(props) => props.selected ? '0.8' : '1'};
 width: 100px;
 height: 100px;
-margin:20px;
+
 :hover{
 opacity: 0.7;
 cursor: pointer;
@@ -79,9 +97,11 @@ class Competencies extends React.Component {
   render() {
     const style = { height: this.getHeight() };
     const list = this.props.list.map((obj) =>
-      (<ImageWrapper key={obj.header} onClick={() => this.imageClicked(obj)} value={obj} selected={this.state.selected === obj.header}>
-        <Image src={obj.src} alt="Pic here" />
-      </ImageWrapper>)
+      (<BorderWrapper selected={this.state.selected === obj.header}>
+        <ImageWrapper key={obj.header} onClick={() => this.imageClicked(obj)} value={obj} selected={this.state.selected === obj.header}>
+          <Image src={obj.src} alt="Pic here" />
+        </ImageWrapper>
+      </BorderWrapper>)
     );
     return (
       <Wrapper id="competencies">
